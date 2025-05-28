@@ -39,6 +39,7 @@ import {
 } from '@angular/fire/storage';
 import { getToken, Messaging, onMessage } from '@angular/fire/messaging';
 import { Router } from '@angular/router';
+import { AppCheck } from '@angular/fire/app-check';
 
 type ChatMessage = {
   name: string | null,
@@ -59,6 +60,7 @@ export class ChatService {
   storage: Storage = inject(Storage);
   messaging: Messaging = inject(Messaging);
   router: Router = inject(Router);
+  appCheck: AppCheck = inject(AppCheck);
   private provider = new GoogleAuthProvider();
   LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
 
@@ -98,7 +100,6 @@ export class ChatService {
     textMessage: string | null,
     imageUrl: string | null,
   ): Promise<void | DocumentReference<DocumentData>> => {
-    this.requestNotificationsPermissions();
 
     // ignore empty messages
     if (!textMessage && !imageUrl) {

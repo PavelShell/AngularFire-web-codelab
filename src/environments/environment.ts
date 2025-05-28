@@ -8,5 +8,8 @@ export const environment = {
     storageBucket: "friendlychat-d9c87.firebasestorage.app",
     messagingSenderId: "197424916330",
     appId: "1:197424916330:web:eda77c6f84a0c40e60a713"
+  },
+  reCAPTCHAEnterpriseKey: {
+    key: "6Ld1hk0rAAAAAGG-C0mshCeuuIuK2PFcqeeW1bwx"
   }
 };
